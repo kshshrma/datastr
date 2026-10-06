@@ -48,11 +48,10 @@ public:
             }
         };
         
-        // Start backtracking from each unique number
         for (int num : unique_nums) {
             count[num]--;
             backtrack(backtrack, num, n - 1);
-            count[num]++; // Backtrack
+            count[num]++; 
         }
         
         return total_permutations;
