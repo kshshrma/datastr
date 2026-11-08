@@ -15,8 +15,7 @@ public:
     void merge(vector<int>& nums,int l,int mid,int r)
     {
         int i=l;
-        //find first i for which nums[i]>nums[j]
-        //since halves are sorted, every other i will be > that particular nums[j] too
+       
         for(int j=mid+1;j<=r;j++)
         {
             while(i<=mid && nums[i]<=nums[j]) i++;
@@ -45,9 +44,7 @@ public:
         }
     }
     bool isIdealPermutation(vector<int>& nums) {
-        //for each j(>i) we need number of elements >nums[j]
-        //so total-number of elements <nums[j]
-        //ordered_set<pair<ll,int>> st;
+    
         int n=nums.size();
         ll count2=0;
         for(int i=0;i<n-1;i++)
@@ -57,11 +54,7 @@ public:
                 count2++;
             }
         }
-        /*for(int i=0;i<n;i++)
-        {
-            count1+=(st.size()-st.order_of_key({nums[i],INT_MAX}));
-            st.insert({nums[i],i});
-        }*/
+      
         temp.resize(n);
         mergeSort(nums,0,n-1);
         return count1==count2;
