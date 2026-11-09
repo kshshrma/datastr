@@ -5,7 +5,6 @@ class Solution {
         auto operator<=>(const Job&) const = default;
     };
     template <class T> using MinHeap = priority_queue<T, vector<T>, greater<>>;
-
 public:
     vector<int> busiestServers(int k, vector<int>& arrival, vector<int>& load) {
         vector<int> turns(k);
